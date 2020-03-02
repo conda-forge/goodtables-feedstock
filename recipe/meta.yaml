@@ -1,5 +1,5 @@
 {% set name = "goodtables" %}
-{% set version = "2.4.2" %}
+{% set version = "2.4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: be35977664fd8f1132ea2c92f33ca46f0b9fa48f80831bae3f5edb9075733fda
+  sha256: 4dac805d2e1fe05caba5f01b317093bdfb7643b256a06cea5ec21657e224dc8c
 
 build:
   number: 0
   entry_points:
     - goodtables = goodtables.cli:cli
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -42,7 +42,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.md
-  summary: 'Goodtables is a framework to validate tabular data'
+  summary: Goodtables is a framework to validate tabular data
 
 extra:
   recipe-maintainers:
