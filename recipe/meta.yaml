@@ -1,5 +1,5 @@
 {% set name = "goodtables" %}
-{% set version = "2.5.2" %}
+{% set version = "2.5.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 89007d6fdc746b40c89e48fee4a630a3f9d05fd12a7e8a0000f9a8ac958eea43
+  sha256: 67c51ac98967684763adb6406f92a683571d144b3a80095b0351a65f49848027
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - goodtables = goodtables.cli:cli
   script: {{ PYTHON }} -m pip install . --no-deps -vv
