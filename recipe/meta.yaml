@@ -10,7 +10,7 @@ source:
   sha256: 67c51ac98967684763adb6406f92a683571d144b3a80095b0351a65f49848027
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - goodtables = goodtables.cli:cli
   script: {{ PYTHON }} -m pip install . --no-deps -vv
