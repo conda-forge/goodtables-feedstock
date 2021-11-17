@@ -28,7 +28,6 @@ requirements:
     - requests >=2.10
     - simpleeval >=0.9
     - six >=1.9
-    - statistics >=1.0
     - tableschema >=1.16.4
     - tabulator >=1.40
 
@@ -37,10 +36,7 @@ test:
     - goodtables
     - goodtables.checks
   commands:
-    - pip check
     - goodtables --help
-  requires:
-    - pip
 
 about:
   home: http://github.com/frictionlessdata/goodtables-py
