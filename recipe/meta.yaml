@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 67c51ac98967684763adb6406f92a683571d144b3a80095b0351a65f49848027
 
 build:
-  number: 1
+  number: 2
   noarch: python
   entry_points:
     - goodtables = goodtables.__main__:cli
@@ -19,12 +19,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - click >=6.6
     - click-default-group
     - datapackage >=1.10
-    - python >=3.6
+    - python >={{ python_min }}
     - requests >=2.10
     - simpleeval >=0.9
     - six >=1.9
@@ -32,6 +32,8 @@ requirements:
     - tabulator >=1.40
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - goodtables
     - goodtables.checks
